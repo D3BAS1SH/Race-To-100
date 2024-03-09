@@ -1,0 +1,10 @@
+section{
+    background-color: #202020;
+    height: 50vh;
+    width: 30vw;
+    border: none;
+    border-radius: 1.5rem;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+
+}
