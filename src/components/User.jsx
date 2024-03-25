@@ -8,7 +8,7 @@ const User = () => {
             <h1>NUMBER INPUT</h1>
         </div>
         <div className='InputSection'>
-            <input type='number' min={1} max={10} step={1}/>
+            <input type='number' min={1} max={10} />
         </div>
     </section>
   )
