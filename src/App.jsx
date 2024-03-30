@@ -1,11 +1,11 @@
 import './App.css'
-import User from './components/User'
+import Player1 from './components/Player1'
 function App() {
 
   return (
     <>
-      <div>
-        <User/>
+      <div className='CardHolder'>
+        <Player1 num={1}/>
       </div>
     </>
   )
