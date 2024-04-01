@@ -13,18 +13,30 @@
     align-items: center;
     position: relative;
     top: 0;
-    left: 0;
+    left: auto;
     z-index: 99;
+    max-height: 90vh;
+    max-width: 90vw;
     .InstructionSet{
+        
         position: absolute;
         top: 5vh;
         left: 5vw;
+        
         height: 90vh;
         width: 90vw;
         border-radius: 2rem;
         background-color: #57575763;
-        text-align: justify;
         padding: 3rem;
+        
+        text-align: justify;
+
+        @media (max-width: 760px) {
+            overflow: auto;
+        }
+        @media (max-height:670px){
+            overflow: auto;
+        }
         h1{
             text-align: center;
             font-family: 'Kode Mono',cursive;
@@ -48,11 +60,28 @@
             border-radius: 0.25rem;
         }
         h3{
+            text-align: justify;
+
+            display: flex;
+            flex-direction: column;
+            
+
             padding-top: 3rem;
             font-family: 'Josefin Sans';
-            font-size: xx-large;
+            font-size: 2.5rem;
             font-weight: 350;
-            color: #fff;
+            color: #ffffff;
+
+            ul{
+                li{
+                    line-height: 2.3rem;
+                    padding-left: 3vw;
+                    list-style-type: circle;
+                    list-style-position: inside;
+                    font-size: 1.5rem;
+                    font-weight: 200;
+                }
+            }
         }
     }
 }
