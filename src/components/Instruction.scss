@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Instruction{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    .InstructionSet{
+        position: absolute;
+        top: 5vh;
+        left: 5vw;
+        height: 90vh;
+        width: 90vw;
+        border-radius: 2rem;
+        background-color: #57575763;
+        text-align: justify;
+        padding: 3rem;
+        h1{
+            text-align: center;
+            font-family: 'Kode Mono',cursive;
+            font-weight: 100;
+            padding-bottom: 3rem;
+            .O1{
+                color: #7ee9ff;
+            }
+            .O2{
+                color: #ff2222;
+            }
+            .O3{
+                color: #00ff00;
+            }
+        }
+        hr{
+            width: 100%;
+            height: 0.5rem;
+            background-color: #f84545;
+            border: none;
+            border-radius: 0.25rem;
+        }
+        h3{
+            padding-top: 3rem;
+            font-family: 'Josefin Sans';
+            font-size: xx-large;
+            font-weight: 350;
+            color: #fff;
+        }
+    }
+}
