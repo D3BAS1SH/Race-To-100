@@ -9,36 +9,68 @@ body{
   color: #eee;
 }
 
-.HelpButton{
-  position: fixed;
-  z-index: 9999;
-  top: 2vw;
-  right: 1vw;
-  button{
-    background-color: transparent;
-    border: 2px solid #fff;
-    border-radius: 1.5rem;
-    height: 3rem;
-    width: 3rem;
-    transition: 0.3s;
-    svg path{
-      fill: #fff;
-    }
-  }
-  button:hover{
-    background-color: #fff;
-    svg path{
-      fill:#000;
-    }
-  }
-  button:active{
-    transition: 0.1s;
-    box-shadow: 0px 0px 15px #aaa;
-  }
-}
-.CardHolder{
+.MAINBODY{
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 1fr;  
+  grid-template-rows: 1fr 9fr;
+  .HelpButton{
+    z-index: 9999;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    button{
+      background-color: transparent;
+      border: 2px solid #fff;
+      border-radius: 1.5rem;
+      height: 3rem;
+      width: 3rem;
+      transition: 0.3s;
+      svg path{
+        fill: #fff;
+      }
+    }
+    button:hover{
+      background-color: #fff;
+      svg path{
+        fill:#000;
+      }
+    }
+    button:active{
+      transition: 0.1s;
+      box-shadow: 0px 0px 15px #aaa;
+    }
+  }
+  .RestOf{
+    position: relative;
+    height: 100%;
+    .InstructionLayout{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+    .ShowP1{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+    .ShowP2{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+    .ShowAL{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+    .CardHolder{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;  
+    }
+  }
 }
