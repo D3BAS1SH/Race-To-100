@@ -6,19 +6,10 @@ const initialState={
     AllTotal:[],
     TotalSum:0,
 }
-const getTheTotalSum = (TotalArray)=>{
-    let sum=0
-    /* for( const ele of TotalArray){
-        sum+=ele
-    } */
-    TotalArray.array.forEach(element => {
-        sum+=element
-    });
-    return sum
-}
+
 export const NumberHolderSlice = createSlice({
     initialState:initialState,
-    name:"Number Holder",
+    name:"NumberHolder",
     reducers:{
         AddValue1:(state,action)=>{
             state.User1.push(parseInt(action.payload))

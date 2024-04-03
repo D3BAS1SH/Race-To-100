@@ -2,10 +2,12 @@ import React from 'react'
 import './User.scss'
 import { useState } from 'react'
 import { useDispatch,useSelector } from 'react-redux'
+import { AddValue1,AddValue2 } from '../../feature/Numberholder'
 
 const Player1 = ({num}) => {
   const [NumVal,setNumVal]=useState(1);
   const [TExt,setTExt]=useState('')
+  const Dispatcher=useDispatch()
 
   const HandleOnClick = () =>{
     if ((NumVal) > 10){
@@ -15,6 +17,12 @@ const Player1 = ({num}) => {
       setTExt("The number you have chossen doesn't satisfies the game instruction.")
     }
     else{
+      if(num===1){
+        Dispatcher(AddValue1(parseInt(NumVal)))
+      }
+      else if(num==2){
+        Dispatcher(AddValue2(parseInt(NumVal)))
+      }
       setTExt("")
       setNumVal(1)
     }
@@ -35,6 +43,7 @@ const Player1 = ({num}) => {
                 <path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/>
               </svg>
             </button>
+
         </div>
     </section>
   )
