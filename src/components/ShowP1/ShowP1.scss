@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Player1Card{
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    
+    background: transparent;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .RecordHolder{
+        z-index: 101;
+        background-color: #57575763;
+        border-radius: 2rem;
+        padding: 4vw;
+        height: 90%;
+        width: 90%;
+        overflow:auto;
+        line-height: 5vh;
+        letter-spacing: 0.31vw;
+        p{
+            font-family: 'Lora';
+            font-size: 3vh;
+        }
+    }
+}
