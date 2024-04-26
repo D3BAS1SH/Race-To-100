@@ -86,6 +86,10 @@ const App = ()=> {
         
       </header>
       
+      <section className='ScoreNWinner'>
+        <ShowWinner/>
+      </section>
+
       <div className="RestOf">
         
         <div className="InstructionLayout">
@@ -108,14 +112,10 @@ const App = ()=> {
             P2Enable && <ShowP2/>
           }
         </div>
-        <div className="ShowAL">
-          {
-            isShowAll && <ShowAll/>
-          }
-        </div>
 
         <div className='CardHolder' style={{filter:isSetBlur?'blur(2px)':'blur(0px)'}}>
           <Player1 num={1}/>
+          <ShowAll/>
           <Player1 num={2}/>
         </div>
 

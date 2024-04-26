@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState={
     User1:[],
     User2:[],
-    AllTotal:[],
     TotalSum:0,
+    isTrue:true
 }
 
 export const NumberHolderSlice = createSlice({
@@ -26,9 +26,12 @@ export const NumberHolderSlice = createSlice({
             state.User2=[]
             state.AllTotal=[]
             state.TotalSum=0
+        },
+        ToggleTrue:(state,action)=>{
+            state.isTrue= !state.isTrue
         }
     }
 })
 
-export const {AddValue1,AddValue2,Reset} = NumberHolderSlice.actions
+export const {AddValue1,AddValue2,Reset,ToggleTrue} = NumberHolderSlice.actions
 export default NumberHolderSlice.reducer
