@@ -8,11 +8,11 @@ const ShowP1 = () => {
     <div className='Player1Card'>
       <div className='backgroundDrop'></div>
       <div className="RecordHolder">
-        <p>Term:2</p>
-        <p>Term:2</p>
-        <p>Term:2</p>
-        <p>Term:2</p>
-        <p>Term:2</p>
+        {
+          User1Vals.map((val)=>{
+            return <p>{val}</p>
+          })
+        }
       </div>
     </div>
   )

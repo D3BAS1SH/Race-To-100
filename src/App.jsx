@@ -4,13 +4,29 @@ import Instruction from './components/Instruction/Instruction'
 import ShowWinner from './components/ShowWinner/ShowWinner'
 import ShowP1 from './components/ShowP1/ShowP1'
 import { useState } from 'react'
+import ShowP2 from './components/ShowP2/ShowP2'
 
 const App = ()=> {
   const [isEnableIns,setIsEnableIns]=useState(false)
   const [isSetBlur,setIsSetBlur]=useState(false)
 
+  const [P1Enable,setP1Enable]=useState(false)
+  const [P2Enable,setP2Enable]=useState(false)
+
   const handleOnClick = () =>{
     setIsEnableIns(!isEnableIns);
+    setIsSetBlur(!isSetBlur);
+  }
+
+  //Player 1 Value show
+  const P1ScoreHandle=()=>{
+    setP1Enable(!P1Enable);
+    setIsSetBlur(!isSetBlur);
+  }
+  
+  //Player 2 Value Show
+  const P2ScoreHandle=()=>{
+    setP2Enable(!P2Enable);
     setIsSetBlur(!isSetBlur);
   }
 
@@ -25,14 +41,14 @@ const App = ()=> {
         </button>
         
         {/* Player 1 Button */}
-        <button onClick={handleOnClick}>
+        <button onClick={P1ScoreHandle}>
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
           <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Zm-20 200h80v-400H380v80h80v320Z"/>
         </svg>
         </button>
         
         {/* Player 2 Button */}
-        <button onClick={handleOnClick}>
+        <button onClick={P2ScoreHandle}>
         <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
           <path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320ZM360-280h240v-80H440v-80h80q33 0 56.5-23.5T600-520v-80q0-33-23.5-56.5T520-680H360v80h160v80h-80q-33 0-56.5 23.5T360-440v160Z"/>
         </svg>
@@ -67,9 +83,15 @@ const App = ()=> {
         </div>
         
         <div className="ShowP1">
-          <ShowP1/>
+          {
+            P1Enable && <ShowP1/>
+          }
         </div>
-        <div className="ShowP2"></div>
+        <div className="ShowP2">
+          {
+            P2Enable && <ShowP2/>
+          }
+        </div>
         <div className="ShowAL"></div>
 
         <div className='CardHolder' style={{filter:isSetBlur?'blur(2px)':'blur(0px)'}}>
