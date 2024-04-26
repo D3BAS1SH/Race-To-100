@@ -3,18 +3,20 @@ import Player1 from './components/Player/Player1'
 import Instruction from './components/Instruction/Instruction'
 import ShowWinner from './components/ShowWinner/ShowWinner'
 import ShowP1 from './components/ShowP1/ShowP1'
-import { useState } from 'react'
 import ShowP2 from './components/ShowP2/ShowP2'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Reset } from './feature/Numberholder'
+import ShowAll from './components/ShowAll/ShowAll'
 
 const App = ()=> {
-  const [isSetBlur,setIsSetBlur]=useState(false)
   const Dispatcher=useDispatch()
+  const [isSetBlur,setIsSetBlur]=useState(false)
   
   const [isEnableIns,setIsEnableIns]=useState(false)
   const [P1Enable,setP1Enable]=useState(false)
   const [P2Enable,setP2Enable]=useState(false)
+  const [isShowAll,setIsShowAll]=useState(false)
 
   const handleOnClick = () =>{
     setIsEnableIns(!isEnableIns);
@@ -32,9 +34,16 @@ const App = ()=> {
     setP2Enable(!P2Enable);
     setIsSetBlur(!isSetBlur);
   }
-
+  
+  //Reset Handler
   const ResetHandle=()=>{
     Dispatcher(Reset())
+  }
+  
+  //Show All Player Inputs
+  const ShowAllInputs=()=>{
+    setIsShowAll(!isShowAll);
+    setIsSetBlur(!isSetBlur);
   }
 
   return (
@@ -62,7 +71,7 @@ const App = ()=> {
         </button>
         
         {/* All Inputs Button */}
-        <button onClick={handleOnClick}>
+        <button onClick={ShowAllInputs}>
           <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
             <path d="M480-83 240-323l56-56 184 183 184-183 56 56L480-83Zm0-238L240-561l56-56 184 183 184-183 56 56-240 240Zm0-238L240-799l56-56 184 183 184-183 56 56-240 240Z"/>
           </svg>
@@ -99,7 +108,11 @@ const App = ()=> {
             P2Enable && <ShowP2/>
           }
         </div>
-        <div className="ShowAL"></div>
+        <div className="ShowAL">
+          {
+            isShowAll && <ShowAll/>
+          }
+        </div>
 
         <div className='CardHolder' style={{filter:isSetBlur?'blur(2px)':'blur(0px)'}}>
           <Player1 num={1}/>
