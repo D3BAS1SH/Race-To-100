@@ -86,9 +86,9 @@ const App = ()=> {
         
       </header>
       
-      <section className='ScoreNWinner'>
+      {/* <section className='ScoreNWinner'>
         <ShowWinner/>
-      </section>
+      </section> */}
 
       <div className="RestOf">
         
