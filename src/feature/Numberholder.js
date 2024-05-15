@@ -31,6 +31,8 @@ export const NumberHolderSlice = createSlice({
             state.User2=[]
             state.AllTotal=[]
             state.TotalSum=0
+            state.isTrue=true
+            state.winner=false
         },
     }
 })
