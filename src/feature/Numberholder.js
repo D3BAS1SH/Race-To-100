@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState={
     User1:[],
     User2:[],
+    AllTotal:[],
     TotalSum:0,
     isTrue:true
 }
@@ -12,6 +13,7 @@ export const NumberHolderSlice = createSlice({
     name:"NumberHolder",
     reducers:{
         AddValue1:(state,action)=>{
+            console.log(action);
             state.User1.push(parseInt(action.payload))
             state.AllTotal.push(parseInt(action.payload))
             state.TotalSum=state.TotalSum+parseInt(action.payload)
