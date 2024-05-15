@@ -18,12 +18,18 @@ export const NumberHolderSlice = createSlice({
             state.User1.push(parseInt(action.payload))
             state.AllTotal.push(parseInt(action.payload))
             state.TotalSum=state.TotalSum+parseInt(action.payload)
+            if(state.TotalSum==100){
+                state.winner=true
+            }
             state.isTrue= !state.isTrue
         },
         AddValue2:(state,action)=>{
             state.User2.push(parseInt(action.payload))
             state.AllTotal.push(parseInt(action.payload))
             state.TotalSum=state.TotalSum+parseInt(action.payload)
+            if(state.TotalSum==100){
+                state.winner=true
+            }
             state.isTrue= !state.isTrue
         },
         Reset:(state,action)=>{
