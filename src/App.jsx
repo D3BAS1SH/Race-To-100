@@ -1,5 +1,6 @@
 import './App.scss'
 import Player1 from './components/Player/Player1'
+import Player2 from './components/Player/Player2'
 import Instruction from './components/Instruction/Instruction'
 import ShowWinner from './components/ShowWinner/ShowWinner'
 import ShowP1 from './components/ShowP1/ShowP1'
@@ -116,7 +117,7 @@ const App = ()=> {
         <div className='CardHolder' style={{filter:isSetBlur?'blur(2px)':'blur(0px)'}}>
           <Player1 num={1}/>
           <ShowAll/>
-          <Player1 num={2}/>
+          <Player2 num={2}/>
         </div>
 
       </div>
