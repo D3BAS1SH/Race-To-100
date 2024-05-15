@@ -20,8 +20,9 @@ export const NumberHolderSlice = createSlice({
             state.TotalSum=state.TotalSum+parseInt(action.payload)
             if(state.TotalSum==100){
                 state.winner=true
+            }else{
+                state.isTrue= !state.isTrue
             }
-            state.isTrue= !state.isTrue
         },
         AddValue2:(state,action)=>{
             state.User2.push(parseInt(action.payload))
@@ -29,8 +30,9 @@ export const NumberHolderSlice = createSlice({
             state.TotalSum=state.TotalSum+parseInt(action.payload)
             if(state.TotalSum==100){
                 state.winner=true
+            }else{
+                state.isTrue= !state.isTrue
             }
-            state.isTrue= !state.isTrue
         },
         Reset:(state,action)=>{
             state.User1=[]
