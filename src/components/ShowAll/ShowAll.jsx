@@ -3,19 +3,16 @@ import { useSelector } from 'react-redux'
 import './ShowAll.scss'
 
 const ShowAll = () => {
-    const User1Vals=useSelector(state=>state.User1);
-    const User2Vals=useSelector(state=>state.User2);
+    const allTotalVals=useSelector(state=>state.AllTotal);
 
-    const myFinalAr=[...User1Vals,...User2Vals]
-
-    console.log(myFinalAr);
+    console.log(allTotalVals);
 
   return (
     <div className='Player1Card'>
       <div className='backgroundDrop'></div>
       <div className="RecordHolder">
         {
-          myFinalAr.map((val,index)=>{
+          allTotalVals.map((val,index)=>{
             return (
               <p>
                 {
