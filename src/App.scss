@@ -49,6 +49,11 @@ body{
   .RestOf{
     position: relative;
     height: 100%;
+    .WinnerSec{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
     .InstructionLayout{
       position: absolute;
       height: 100%;
