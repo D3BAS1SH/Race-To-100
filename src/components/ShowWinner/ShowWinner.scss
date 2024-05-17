@@ -5,15 +5,18 @@
 }
 
 .myCard{
-    z-index: 9999999999999;
+    z-index: 1;
     height: 100%;
     width: 100%;
     font-size: 76px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: transparent;
     .Show-winner{
-        z-index: 99999999999999999;
+        z-index: 1;
+        width: 100%;
+        background-color: #000000;
+        color: #ffe6c2;
+        text-align: center;
     }
 }
