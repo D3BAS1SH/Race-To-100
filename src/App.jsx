@@ -5,35 +5,42 @@ import Instruction from './components/Instruction/Instruction'
 import ShowWinner from './components/ShowWinner/ShowWinner'
 import ShowP1 from './components/ShowP1/ShowP1'
 import ShowP2 from './components/ShowP2/ShowP2'
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { Reset } from './feature/Numberholder'
+import { useEffect, useState } from 'react'
+import { useDispatch,useSelector } from 'react-redux'
+import { Reset,ToggleBlur } from './feature/Numberholder'
 import ShowAll from './components/ShowAll/ShowAll'
 
 const App = ()=> {
   const Dispatcher=useDispatch()
-  const [isSetBlur,setIsSetBlur]=useState(false)
+  const winner=useSelector(state=>state.winner)
+  const isSetBlur=useSelector(state=>state.blurSet)
   
   const [isEnableIns,setIsEnableIns]=useState(false)
   const [P1Enable,setP1Enable]=useState(false)
   const [P2Enable,setP2Enable]=useState(false)
   const [isShowAll,setIsShowAll]=useState(false)
 
+  useEffect(()=>{
+    if(winner){
+      Dispatcher(ToggleBlur())
+    }
+  },[winner])
+
   const handleOnClick = () =>{
     setIsEnableIns(!isEnableIns);
-    setIsSetBlur(!isSetBlur);
+    Dispatcher(ToggleBlur())
   }
 
   //Player 1 Value show
   const P1ScoreHandle=()=>{
     setP1Enable(!P1Enable);
-    setIsSetBlur(!isSetBlur);
+    Dispatcher(ToggleBlur())
   }
   
   //Player 2 Value Show
   const P2ScoreHandle=()=>{
     setP2Enable(!P2Enable);
-    setIsSetBlur(!isSetBlur);
+    Dispatcher(ToggleBlur())
   }
   
   //Reset Handler
@@ -44,7 +51,7 @@ const App = ()=> {
   //Show All Player Inputs
   const ShowAllInputs=()=>{
     setIsShowAll(!isShowAll);
-    setIsSetBlur(!isSetBlur);
+    Dispatcher(ToggleBlur())
   }
 
   return (
@@ -100,7 +107,9 @@ const App = ()=> {
         </div>
         
         <div className="WinnerSec">
-          {/* <ShowWinner/> */}
+          {
+            winner && <ShowWinner/>
+          }
         </div>
         
         <div className="ShowP1">
