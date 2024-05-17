@@ -6,7 +6,8 @@ const initialState={
     AllTotal:[],
     TotalSum:0,
     isTrue:true,
-    winner:false
+    winner:false,
+    blurSet:false
 }
 
 export const NumberHolderSlice = createSlice({
@@ -41,9 +42,14 @@ export const NumberHolderSlice = createSlice({
             state.TotalSum=0
             state.isTrue=true
             state.winner=false
+            state.blurSet=false
+            console.log('Hit Reset.');
         },
+        ToggleBlur:(state,action)=>{
+            state.blurSet=!state.blurSet
+        }
     }
 })
 
-export const {AddValue1,AddValue2,Reset} = NumberHolderSlice.actions
+export const {AddValue1,AddValue2,Reset,ToggleBlur} = NumberHolderSlice.actions
 export default NumberHolderSlice.reducer
