@@ -5,8 +5,6 @@ import './ShowAll.scss'
 const ShowAll = () => {
     const allTotalVals=useSelector(state=>state.AllTotal);
 
-    console.log(allTotalVals);
-
   return (
     <div className='Player1Card'>
       <div className='backgroundDrop'></div>

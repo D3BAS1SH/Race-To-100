@@ -11,8 +11,6 @@ const Player1 = ({num}) => {
   const Dispatcher=useDispatch()
   const isTrue=useSelector(state=>state.isTrue)
 
-  console.log(isTrue);
-
   const HandleOnClick = () =>{
     if ((NumVal) > 10){
       setTExt("The number you have chossen doesn't satisfies the game instruction.")
