@@ -14,7 +14,7 @@ const ShowAll = () => {
         {
           allTotalVals.map((val,index)=>{
             return (
-              <p>
+              <p key={index}>
                 {
                   `[PLAYER : ${index%2==0?1:2}] : ${val}`
                 }
